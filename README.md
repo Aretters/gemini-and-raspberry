@@ -1,3 +1,3 @@
 # gemini-and-raspberry
-incomplete
-Still developing
+incomplete,still developing
+Using YOLOv5 for the model of gesture recongnition.
