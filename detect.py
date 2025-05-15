@@ -212,11 +212,11 @@ def run(
 這個 JSON 物件必須包含以下鍵：
 "event": 表示事件類型 (例如: "detection", "status")
 "objects": 包含偵測到的物體名稱列表 (例如: ["person", "cat"])
-"action": 基於偵測到的物體，建議樹莓派執行的動作。請根據偵測到的物體類型判斷可能的相關動作 (例如: 如果有人，可能是 "alert" 或 "record"；如果偵測到貓或狗，可能是 "status" 或 "notify"；如果偵測到椅子或其他非移動物體，可能是 "log" 或 "none")。請從以下建議動作中選擇： "alert", "record", "log", "notify", "light_on", "buzzer_on", "none"。
+"action": "action": 將action設定成跟objects一樣的名字 ，全部字母小寫，若是有thumbs的存在把s去掉
 
-例如，如果偵測到一個人，理想的回應是 `{{\"event\": \"detection\", \"objects\": [\"person\"], \"action\": \"alert\"}}`
-如果偵測到一隻貓和一隻狗，理想的回應是 `{{\"event\": \"detection\", \"objects\": [\"cat\", \"dog\"], \"action\": \"notify\"}}`
-如果偵測到一張椅子，理想的回應是 `{{\"event\": \"detection\", \"objects\": [\"chair\"], \"action\": \"log\"}}`
+例如，如果偵測到一個人，理想的回應是 `{{\"event\": \"detection\", \"objects\": [\"person\"], \"action\": \"person\"}}`
+如果偵測到一隻貓和一隻狗，理想的回應是 `{{\"event\": \"detection\", \"objects\": [\"cat\", \"dog\"], \"action\": \"dog\"}}`
+如果偵測到一張椅子，理想的回應是 `{{\"event\": \"detection\", \"objects\": [\"chair\"], \"action\": \"chair\"}}`
 如果沒有偵測到物體，或者偵測到的物體不重要，可以建議動作為 "none"。
 
 請嚴格只回傳 JSON 字串。
